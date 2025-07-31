@@ -9,7 +9,7 @@ const app = express();
 
 // Configure CORS to allow only specific origin
 const corsOptions = {
-  origin: 'https://accredian-frontend-task-proj.vercel.app', // Your frontend URL
+  origin: 'http://localhost:3000', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 };
