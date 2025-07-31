@@ -13,9 +13,22 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow specific HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow specific headers
 };
-
+console.log(process.env.FRONTEND_URL)
 app.use(cors(corsOptions));
 app.use(express.json());
+
+
+app.get('/', (req, res) => {
+  res.send(`
+    <html>
+      <head><title>Backend Status</title></head>
+      <body>
+        <h1>Backend is working!</h1>
+        <p>This is a simple HTML response from the backend.</p>
+      </body>
+    </html>
+  `);
+});
 
 app.use('/api/users', userRoutes);
 app.use('/api/referrals', referralRoutes);
